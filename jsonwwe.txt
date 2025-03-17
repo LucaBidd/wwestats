@@ -1,0 +1,169 @@
+[
+  {
+    "tipo": "SINGLE",
+    "durata": "00:30:00",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["John Cena", "The Rock"],
+    "vincitori": ["John Cena"]
+  },
+  {
+    "tipo": "TAGTEAM",
+    "durata": "00:45:00",
+    "stipulazione": "STEELCAGE",
+    "partecipanti": ["Roman Reigns", "Becky Lynch", "Sasha Banks", "Kofi Kingston"],
+    "vincitori": ["Roman Reigns", "Becky Lynch"]
+  },
+  {
+    "tipo": "ROYALRUMBLE",
+    "durata": "01:00:00",
+    "stipulazione": "ELIMINATIONCHAMBER",
+    "partecipanti": ["Charlotte Flair", "Edge", "AJ Styles", "Brock Lesnar", "Roman Reigns", "Becky Lynch"],
+    "vincitori": ["Charlotte Flair"]
+  },
+  {
+    "tipo": "SINGLE",
+    "durata": "00:25:00",
+    "stipulazione": "EXTREMERULES",
+    "partecipanti": ["Kofi Kingston", "Sasha Banks"],
+    "vincitori": ["Sasha Banks"]
+  },
+  {
+    "tipo": "FATALFOUR",
+    "durata": "01:10:00",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["Roman Reigns", "Becky Lynch", "Sasha Banks", "Kofi Kingston"],
+    "vincitori": ["Roman Reigns"]
+  },
+  {
+    "tipo": "TRIPLETREATH",
+    "durata": "00:50:00",
+    "stipulazione": "STEELCAGE",
+    "partecipanti": ["Charlotte Flair", "Edge", "AJ Styles"],
+    "vincitori": ["AJ Styles"]
+  },
+  {
+    "tipo": "SINGLE",
+    "durata": "00:20:00",
+    "stipulazione": "EXTREMERULES",
+    "partecipanti": ["Brock Lesnar", "Roman Reigns"],
+    "vincitori": ["Roman Reigns"]
+  },
+  {
+    "tipo": "SIXMAN",
+    "durata": "01:05:00",
+    "stipulazione": "ELIMINATIONCHAMBER",
+    "partecipanti": ["Kofi Kingston", "Charlotte Flair", "Edge", "AJ Styles", "Brock Lesnar", "Roman Reigns"],
+    "vincitori": ["Charlotte Flair"]
+  },
+  {
+    "tipo": "ROYALRUMBLE",
+    "durata": "01:15:00",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["John Cena", "The Rock", "Roman Reigns", "Becky Lynch", "Sasha Banks", "Kofi Kingston"],
+    "vincitori": ["John Cena"]
+  },
+  {
+    "tipo": "TAGTEAM",
+    "durata": "00:35:00",
+    "stipulazione": "STEELCAGE",
+    "partecipanti": ["Brock Lesnar", "Roman Reigns", "Kofi Kingston", "Sasha Banks"],
+    "vincitori": ["Brock Lesnar", "Roman Reigns"]
+  }
+]
+
+
+--------------------------------------------------------------
+
+[
+  {
+    "id": 1,
+    "nome": "John Cena",
+    "dataNascita": "1977-04-23",
+    "debutto": "2002-06-27",
+    "nazionalita": "USA",
+    "peso": 114,
+    "altezza": 185
+  },
+  {
+    "id": 2,
+    "nome": "The Rock",
+    "dataNascita": "1972-05-02",
+    "debutto": "1996-03-10",
+    "nazionalita": "USA",
+    "peso": 118,
+    "altezza": 196
+  },
+  {
+    "id": 3,
+    "nome": "Roman Reigns",
+    "dataNascita": "1985-05-25",
+    "debutto": "2010-11-20",
+    "nazionalita": "USA",
+    "peso": 120,
+    "altezza": 191
+  },
+  {
+    "id": 4,
+    "nome": "Becky Lynch",
+    "dataNascita": "1987-01-30",
+    "debutto": "2005-11-06",
+    "nazionalita": "Irlanda",
+    "peso": 61,
+    "altezza": 165
+  },
+  {
+    "id": 5,
+    "nome": "Sasha Banks",
+    "dataNascita": "1992-01-26",
+    "debutto": "2010-05-06",
+    "nazionalita": "USA",
+    "peso": 55,
+    "altezza": 160
+  },
+  {
+    "id": 6,
+    "nome": "Kofi Kingston",
+    "dataNascita": "1981-08-14",
+    "debutto": "2006-01-01",
+    "nazionalita": "USA",
+    "peso": 98,
+    "altezza": 183
+  },
+  {
+    "id": 7,
+    "nome": "Charlotte Flair",
+    "dataNascita": "1986-04-05",
+    "debutto": "2012-05-17",
+    "nazionalita": "USA",
+    "peso": 69,
+    "altezza": 180
+  },
+  {
+    "id": 8,
+    "nome": "Edge",
+    "dataNascita": "1973-10-30",
+    "debutto": "1992-07-01",
+    "nazionalita": "Canada",
+    "peso": 102,
+    "altezza": 196
+  },
+  {
+    "id": 9,
+    "nome": "AJ Styles",
+    "dataNascita": "1977-06-02",
+    "debutto": "1998-05-05",
+    "nazionalita": "USA",
+    "peso": 98,
+    "altezza": 175
+  },
+  {
+    "id": 10,
+    "nome": "Brock Lesnar",
+    "dataNascita": "1977-07-12",
+    "debutto": "2000-03-18",
+    "nazionalita": "USA",
+    "peso": 130,
+    "altezza": 191
+  }
+]
+
