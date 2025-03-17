@@ -45,7 +45,6 @@ public class MatchService {
     
     public Match updateMatch(String id, Match m) {
         return repository.findById(id).map(existingMatch -> {
-            existingMatch.setId(m.getId());
             existingMatch.setDurata(m.getDurata());
             existingMatch.setTipo(m.getTipo());
             existingMatch.setStipulazione(m.getStipulazione());

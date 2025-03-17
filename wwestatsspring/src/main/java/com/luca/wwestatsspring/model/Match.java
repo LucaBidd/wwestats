@@ -16,8 +16,6 @@ import lombok.NoArgsConstructor;
 @Document   // la classe è un documento di MongoDB
 public class Match {
 
-    private String id;
-
     private TipoMatch tipo;
 
     @JsonFormat(pattern = "HH:mm:ss")
@@ -28,5 +26,7 @@ public class Match {
     private List<String> partecipanti;  //lista di nomi di wrestler
     
     private List<String> vincitori;   //lista di nomi di wrestler vincitori
-    
+
+    private String eventoId;
+
 }
