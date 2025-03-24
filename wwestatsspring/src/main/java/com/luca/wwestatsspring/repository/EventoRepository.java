@@ -25,4 +25,11 @@ public interface EventoRepository  extends MongoRepository<Evento, String>{
 
     //Trova in base alla citta
     List<Evento> findByCitta(String citta);
+
+    //Conta gli eventi in uno stato
+    int countByStato(String stato);
+
+    //Conta gli eventi in una citta
+    int countByCitta(String citta);
+
 }

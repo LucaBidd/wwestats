@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.luca.wwestatsspring.model.Evento;
+import com.luca.wwestatsspring.model.Match;
 import com.luca.wwestatsspring.service.EventoService;
 
 import lombok.AllArgsConstructor;
@@ -84,4 +85,17 @@ public class EventoController {
     public List<Evento> filtraByCitta(@PathVariable String citta){
         return eventoService.findByCitta(citta);
     }
+
+    @GetMapping("/count/country/{stato}")
+    public long countByStato(@PathVariable String stato) {
+        return eventoService.countByStato(stato);
+    }
+
+    //Dall'evento, stampa la lista dei match
+    @GetMapping("/{id}/matches")
+    public List<Match> getMatchesByEvento(@PathVariable String id) {
+        return eventoService.getMatchesByEvento(id);
+    }
+
+
 }

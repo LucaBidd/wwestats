@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.luca.wwestatsspring.model.Evento;
+import com.luca.wwestatsspring.model.Match;
 import com.luca.wwestatsspring.repository.EventoRepository;
+import com.luca.wwestatsspring.repository.MatchRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -18,6 +20,7 @@ import lombok.AllArgsConstructor;
 public class EventoService {
 
     EventoRepository repository;
+    MatchRepository matchRepository;
 
     public List<Evento> getAllEventi(){
         return repository.findAll();
@@ -72,4 +75,22 @@ public class EventoService {
     public List<Evento> findByCitta(String citta){
         return repository.findByCitta(citta);
     }
+
+     //Conta gli eventi in uno stato
+    public int countByStato(String stato){
+        return repository.countByStato(stato);
+    }
+
+     //Conta gli eventi in una citta
+    public int countByCitta(String citta){
+        return repository.countByCitta(citta);
+    }
+
+    //trova 
+    public List<Match> getMatchesByEvento(String eventoId) {
+        Evento evento = repository.findById(eventoId)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Evento non trovato"));
+        return matchRepository.findAllById(evento.getMatchesIds());
+    }
+    
 }
