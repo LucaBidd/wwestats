@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.luca.wwestatsspring.model.Evento;
 import com.luca.wwestatsspring.model.Match;
+import com.luca.wwestatsspring.model.Wrestler;
 import com.luca.wwestatsspring.service.EventoService;
 
 import lombok.AllArgsConstructor;
@@ -97,5 +98,9 @@ public class EventoController {
         return eventoService.getMatchesByEvento(id);
     }
 
+    @GetMapping("/{id}/wrestlers")
+    public List<Wrestler> getWrestlersByEvento(@PathVariable String id) {
+        return eventoService.getWrestlersByEvento(id);
+    }
 
 }
