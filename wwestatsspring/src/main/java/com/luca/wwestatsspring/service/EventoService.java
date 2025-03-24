@@ -26,7 +26,7 @@ public class EventoService {
     EventoRepository repository;
     MatchRepository matchRepository;
     WrestlerRepository wrestlerRepository;
-
+//---crud base---
     public List<Evento> getAllEventi(){
         return repository.findAll();
     }
@@ -55,7 +55,7 @@ public class EventoService {
     public void deleteById(String id){
         repository.deleteById(id);
     }
-
+//---altro---
     //Trova tutti gli eventi con quel nome
     public List<Evento> findByNome(String nome){
         return repository.findByNome(nome);
@@ -69,6 +69,16 @@ public class EventoService {
     //Trova in base alla data
     public List<Evento> findByData(LocalDate data){
         return repository.findByData(data);
+    }
+    
+    // Trova eventi prima di una certa data
+    public List<Evento> getByDataBefore(LocalDate data){
+        return repository.findByDataBefore(data);
+    }
+
+    // Trova eventi dopo una certa data
+    public List<Evento> getByDataAfter(LocalDate data){
+        return repository.findByDataAfter(data);
     }
 
     //Trova in base allo stato
@@ -118,6 +128,15 @@ public class EventoService {
             .collect(Collectors.toList());
 
         return wrestlers;
+    }
+
+    // Trova eventi in un range di date
+    public List<Evento> getByDataBetween(LocalDate startDate, LocalDate endDate){
+        return repository.findByDataBetween(startDate, endDate);
+    }
+
+    public List<Match> getMatchesByEventoId(String id){
+        return repository.findMatchesByEventoId(id);
     }
 
 }

@@ -1,205 +1,337 @@
+----------WRESTLERS--------------
 [
   {
-    "tipo": "SINGLE",
-    "durata": "00:30:00",
-    "stipulazione": "NORMAL",
-    "partecipanti": ["John Cena", "The Rock"],
-    "vincitori": ["John Cena"]
-  },
-  {
-    "tipo": "TAGTEAM",
-    "durata": "00:45:00",
-    "stipulazione": "STEELCAGE",
-    "partecipanti": ["Roman Reigns", "Becky Lynch", "Sasha Banks", "Kofi Kingston"],
-    "vincitori": ["Roman Reigns", "Becky Lynch"]
-  },
-  {
-    "tipo": "ROYALRUMBLE",
-    "durata": "01:00:00",
-    "stipulazione": "ELIMINATIONCHAMBER",
-    "partecipanti": ["Charlotte Flair", "Edge", "AJ Styles", "Brock Lesnar", "Roman Reigns", "Becky Lynch"],
-    "vincitori": ["Charlotte Flair"]
-  },
-  {
-    "tipo": "SINGLE",
-    "durata": "00:25:00",
-    "stipulazione": "EXTREMERULES",
-    "partecipanti": ["Kofi Kingston", "Sasha Banks"],
-    "vincitori": ["Sasha Banks"]
-  },
-  {
-    "tipo": "FATALFOUR",
-    "durata": "01:10:00",
-    "stipulazione": "NORMAL",
-    "partecipanti": ["Roman Reigns", "Becky Lynch", "Sasha Banks", "Kofi Kingston"],
-    "vincitori": ["Roman Reigns"]
-  },
-  {
-    "tipo": "TRIPLETREATH",
-    "durata": "00:50:00",
-    "stipulazione": "STEELCAGE",
-    "partecipanti": ["Charlotte Flair", "Edge", "AJ Styles"],
-    "vincitori": ["AJ Styles"]
-  },
-  {
-    "tipo": "SINGLE",
-    "durata": "00:20:00",
-    "stipulazione": "EXTREMERULES",
-    "partecipanti": ["Brock Lesnar", "Roman Reigns"],
-    "vincitori": ["Roman Reigns"]
-  },
-  {
-    "tipo": "SIXMAN",
-    "durata": "01:05:00",
-    "stipulazione": "ELIMINATIONCHAMBER",
-    "partecipanti": ["Kofi Kingston", "Charlotte Flair", "Edge", "AJ Styles", "Brock Lesnar", "Roman Reigns"],
-    "vincitori": ["Charlotte Flair"]
-  },
-  {
-    "tipo": "ROYALRUMBLE",
-    "durata": "01:15:00",
-    "stipulazione": "NORMAL",
-    "partecipanti": ["John Cena", "The Rock", "Roman Reigns", "Becky Lynch", "Sasha Banks", "Kofi Kingston"],
-    "vincitori": ["John Cena"]
-  },
-  {
-    "tipo": "TAGTEAM",
-    "durata": "00:35:00",
-    "stipulazione": "STEELCAGE",
-    "partecipanti": ["Brock Lesnar", "Roman Reigns", "Kofi Kingston", "Sasha Banks"],
-    "vincitori": ["Brock Lesnar", "Roman Reigns"]
-  }
-]
-
---------------------------------------------------------------
-
-[
-  {
-    "id": 1,
+    "id": "1",
     "nome": "John Cena",
     "dataNascita": "1977-04-23",
-    "debutto": "2002-06-27",
     "nazionalita": "USA",
-    "peso": 114,
-    "altezza": 185
+    "altezza": 1.85,
+    "peso": 114.0,
+    "debutto": "1999-11-05",
+    "descrizione": "16 volte campione del mondo, icona della WWE."
   },
   {
-    "id": 2,
+    "id": "2",
     "nome": "The Rock",
     "dataNascita": "1972-05-02",
-    "debutto": "1996-03-10",
     "nazionalita": "USA",
-    "peso": 118,
-    "altezza": 196
+    "altezza": 1.96,
+    "peso": 118.0,
+    "debutto": "1996-11-17",
+    "descrizione": "Uno dei wrestler più carismatici di sempre, diventato attore."
   },
   {
-    "id": 3,
-    "nome": "Roman Reigns",
-    "dataNascita": "1985-05-25",
-    "debutto": "2010-11-20",
+    "id": "3",
+    "nome": "Stone Cold Steve Austin",
+    "dataNascita": "1964-12-18",
     "nazionalita": "USA",
-    "peso": 120,
-    "altezza": 191
+    "altezza": 1.88,
+    "peso": 114.0,
+    "debutto": "1989-09-30",
+    "descrizione": "Leader dell'Attitude Era, noto per la sua rivalità con Vince McMahon."
   },
   {
-    "id": 4,
-    "nome": "Becky Lynch",
-    "dataNascita": "1987-01-30",
-    "debutto": "2005-11-06",
-    "nazionalita": "Irlanda",
-    "peso": 61,
-    "altezza": 165
-  },
-  {
-    "id": 5,
-    "nome": "Sasha Banks",
-    "dataNascita": "1992-01-26",
-    "debutto": "2010-05-06",
+    "id": "4",
+    "nome": "Triple H",
+    "dataNascita": "1969-07-27",
     "nazionalita": "USA",
-    "peso": 55,
-    "altezza": 160
+    "altezza": 1.93,
+    "peso": 116.0,
+    "debutto": "1992-03-24",
+    "descrizione": "14 volte campione del mondo e dirigente della WWE."
   },
   {
-    "id": 6,
-    "nome": "Kofi Kingston",
-    "dataNascita": "1981-08-14",
-    "debutto": "2006-01-01",
+    "id": "5",
+    "nome": "Randy Orton",
+    "dataNascita": "1980-04-01",
     "nazionalita": "USA",
-    "peso": 98,
-    "altezza": 183
+    "altezza": 1.96,
+    "peso": 113.0,
+    "debutto": "2002-04-25",
+    "descrizione": "Il più giovane campione del mondo nella storia della WWE."
   },
   {
-    "id": 7,
-    "nome": "Charlotte Flair",
-    "dataNascita": "1986-04-05",
-    "debutto": "2012-05-17",
-    "nazionalita": "USA",
-    "peso": 69,
-    "altezza": 180
-  },
-  {
-    "id": 8,
-    "nome": "Edge",
-    "dataNascita": "1973-10-30",
-    "debutto": "1992-07-01",
-    "nazionalita": "Canada",
-    "peso": 102,
-    "altezza": 196
-  },
-  {
-    "id": 9,
-    "nome": "AJ Styles",
-    "dataNascita": "1977-06-02",
-    "debutto": "1998-05-05",
-    "nazionalita": "USA",
-    "peso": 98,
-    "altezza": 175
-  },
-  {
-    "id": 10,
+    "id": "6",
     "nome": "Brock Lesnar",
     "dataNascita": "1977-07-12",
-    "debutto": "2000-03-18",
     "nazionalita": "USA",
-    "peso": 130,
-    "altezza": 191
+    "altezza": 1.91,
+    "peso": 130.0,
+    "debutto": "2000-10-11",
+    "descrizione": "Unico atleta ad aver vinto titoli UFC e WWE."
+  },
+  {
+    "id": "7",
+    "nome": "Shawn Michaels",
+    "dataNascita": "1965-07-22",
+    "nazionalita": "USA",
+    "altezza": 1.85,
+    "peso": 102.0,
+    "debutto": "1984-10-10",
+    "descrizione": "Mr. WrestleMania, noto per i suoi match spettacolari."
+  },
+  {
+    "id": "8",
+    "nome": "Kurt Angle",
+    "dataNascita": "1968-12-09",
+    "nazionalita": "USA",
+    "altezza": 1.83,
+    "peso": 100.0,
+    "debutto": "1998-08-20",
+    "descrizione": "Medaglia d'oro olimpica nel wrestling, ha dominato la WWE."
+  },
+  {
+    "id": "9",
+    "nome": "Edge",
+    "dataNascita": "1973-10-30",
+    "nazionalita": "Canada",
+    "altezza": 1.96,
+    "peso": 109.0,
+    "debutto": "1992-07-01",
+    "descrizione": "Master del TLC Match e vincitore della Royal Rumble."
+  },
+  {
+    "id": "10",
+    "nome": "CM Punk",
+    "dataNascita": "1978-10-26",
+    "nazionalita": "USA",
+    "altezza": 1.88,
+    "peso": 99.0,
+    "debutto": "1999-03-10",
+    "descrizione": "Ha rivoluzionato la WWE con la sua Pipe Bomb nel 2011."
+  },
+  {
+    "id": "11",
+    "nome": "AJ Styles",
+    "dataNascita": "1977-06-02",
+    "nazionalita": "USA",
+    "altezza": 1.80,
+    "peso": 99.0,
+    "debutto": "1998-01-10",
+    "descrizione": "The Phenomenal One, noto per le sue abilità tecniche e aeree."
+  },
+  {
+    "id": "12",
+    "nome": "Finn Bálor",
+    "dataNascita": "1981-07-25",
+    "nazionalita": "Irlanda",
+    "altezza": 1.80,
+    "peso": 86.0,
+    "debutto": "2000-10-08",
+    "descrizione": "Creatore del Bullet Club, primo campione universale WWE."
+  },
+  {
+    "id": "13",
+    "nome": "Seth Rollins",
+    "dataNascita": "1986-05-28",
+    "nazionalita": "USA",
+    "altezza": 1.85,
+    "peso": 98.0,
+    "debutto": "2005-09-23",
+    "descrizione": "Architetto dello Shield e più volte campione del mondo."
+  },
+  {
+    "id": "14",
+    "nome": "Roman Reigns",
+    "dataNascita": "1985-05-25",
+    "nazionalita": "USA",
+    "altezza": 1.91,
+    "peso": 120.0,
+    "debutto": "2010-08-19",
+    "descrizione": "The Tribal Chief, dominante campione WWE per anni."
+  },
+  {
+    "id": "15",
+    "nome": "Kevin Owens",
+    "dataNascita": "1984-05-07",
+    "nazionalita": "Canada",
+    "altezza": 1.83,
+    "peso": 121.0,
+    "debutto": "2000-05-12",
+    "descrizione": "Prizefighter, noto per la sua intensità e mic skills."
   }
 ]
-
---------------------------------------------------------------
+------------------------
+----------Match--------------
 
 [
   {
-    "nome": "Royal Rumble 2025",
-    "data": "2025-01-28",
-    "stato": "Stati Uniti",
-    "citta": "San Antonio",
-    "matchesIds": [
-      "67d2c46de680213ed7bff1a4",
-      "67d2c4af7e2df45a14d03af1",
-      "67d2c4bf7e2df45a14d03af2"
-    ]
+    "id": "1",
+    "tipo": "SINGLE",
+    "durata": "00:15:30",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["1", "2"],
+    "vincitori": ["1"],
+    "eventoId": "1"
   },
   {
-    "nome": "Elimination Chamber 2025",
-    "data": "2025-02-18",
-    "stato": "Germania",
-    "citta": "Berlino",
-    "matchesIds": [
-      "67d2c4c77e2df45a14d03af3",
-      "67d2c4cf7e2df45a14d03af4",
-      "67d2c4d97e2df45a14d03af5"
-    ]
+    "id": "2",
+    "tipo": "TAGTEAM",
+    "durata": "00:20:00",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["3", "4", "5", "6"],
+    "vincitori": ["3", "4"],
+    "eventoId": "1"
   },
   {
-    "nome": "WrestleMania 41",
-    "data": "2025-04-07",
-    "stato": "Stati Uniti",
-    "citta": "New Orleans",
-    "matchesIds": [
-      "67d2c4e17e2df45a14d03af6",
-      "67d2c4ea7e2df45a14d03af7",
-      "67d2c4f27e2df45a14d03af8"
-    ]
+    "id": "3",
+    "tipo": "SINGLE",
+    "durata": "00:18:45",
+    "stipulazione": "EXTREMERULES",
+    "partecipanti": ["7", "8"],
+    "vincitori": ["7"],
+    "eventoId": "2"
+  },
+  {
+    "id": "4",
+    "tipo": "TRIPLETHREAT",
+    "durata": "00:22:10",
+    "stipulazione": "SPECIALGUESTREFEREE",
+    "partecipanti": ["9", "10", "11"],
+    "vincitori": ["9"],
+    "eventoId": "2"
+  },
+  {
+    "id": "5",
+    "tipo": "SINGLE",
+    "durata": "00:12:30",
+    "stipulazione": "STEELCAGE",
+    "partecipanti": ["12", "13"],
+    "vincitori": ["12"],
+    "eventoId": "3"
+  },
+  {
+    "id": "6",
+    "tipo": "SINGLE",
+    "durata": "00:16:40",
+    "stipulazione": "STEELCAGE",
+    "partecipanti": ["14", "15"],
+    "vincitori": ["14"],
+    "eventoId": "3"
+  },
+  {
+    "id": "7",
+    "tipo": "TAGTEAM",
+    "durata": "00:25:00",
+    "stipulazione": "LADDERMATCH",
+    "partecipanti": ["1", "2", "3", "4"],
+    "vincitori": ["1", "2"],
+    "eventoId": "4"
+  },
+  {
+    "id": "8",
+    "tipo": "FATALFOUR",
+    "durata": "00:21:15",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["5", "6", "7", "8"],
+    "vincitori": ["7"],
+    "eventoId": "4"
+  },
+  {
+    "id": "9",
+    "tipo": "SINGLE",
+    "durata": "00:14:50",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["9", "10"],
+    "vincitori": ["9"],
+    "eventoId": "5"
+  },
+  {
+    "id": "10",
+    "tipo": "TAGTEAM",
+    "durata": "00:19:30",
+    "stipulazione": "TABLESMATCH",
+    "partecipanti": ["11", "12", "13", "14"],
+    "vincitori": ["13", "14"],
+    "eventoId": "5"
+  },
+  {
+    "id": "11",
+    "tipo": "SINGLE",
+    "durata": "00:17:10",
+    "stipulazione": "LASTMANSTANDING",
+    "partecipanti": ["15", "1"],
+    "vincitori": ["15"],
+    "eventoId": "1"
+  },
+  {
+    "id": "12",
+    "tipo": "TRIPLETHREAT",
+    "durata": "00:23:20",
+    "stipulazione": "HELLINACELL",
+    "partecipanti": ["2", "3", "4"],
+    "vincitori": ["3"],
+    "eventoId": "2"
+  },
+  {
+    "id": "13",
+    "tipo": "SINGLE",
+    "durata": "00:13:50",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["5", "6"],
+    "vincitori": ["5"],
+    "eventoId": "3"
+  },
+  {
+    "id": "14",
+    "tipo": "FATALFOUR",
+    "durata": "00:22:30",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["7", "8", "9", "10"],
+    "vincitori": ["8"],
+    "eventoId": "1"
+  },
+  {
+    "id": "15",
+    "tipo": "SINGLE",
+    "durata": "00:15:20",
+    "stipulazione": "NORMAL",
+    "partecipanti": ["11", "12"],
+    "vincitori": ["12"],
+    "eventoId": "2"
+  }
+]
+------------------------
+----------EVENTI--------------
+[
+  {
+    "eventoId": "1",
+    "nome": "WrestleMania",
+    "data": "2024-04-07",
+    "stato": "USA",
+    "citta": "Los Angeles",
+    "matchesIds": ["1", "2", "11", "14"]
+  },
+  {
+    "eventoId": "2",
+    "nome": "SummerSlam",
+    "data": "2024-08-10",
+    "stato": "USA",
+    "citta": "New York",
+    "matchesIds": ["3", "4", "12", "15"]
+  },
+  {
+    "eventoId": "3",
+    "nome": "Royal Rumble",
+    "data": "2024-01-28",
+    "stato": "USA",
+    "citta": "Houston",
+    "matchesIds": ["5", "6", "13"]
+  },
+  {
+    "eventoId": "4",
+    "nome": "Survivor Series",
+    "data": "2024-11-24",
+    "stato": "Canada",
+    "citta": "Toronto",
+    "matchesIds": ["7", "8"]
+  },
+  {
+    "eventoId": "5",
+    "nome": "Money in the Bank",
+    "data": "2024-07-06",
+    "stato": "UK",
+    "citta": "London",
+    "matchesIds": ["9", "10"]
   }
 ]

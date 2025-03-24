@@ -2,9 +2,8 @@ package com.luca.wwestatsspring.model;
 
 public enum TipoMatch {
     SINGLE,
-	TRIPLETREATH,
-	TAGTEAM,
-	FATALFOUR,
-    ROYALRUMBLE,
+    TRIPLETHREAT,
+    TAGTEAM,
+    FATALFOUR,
     SIXMAN
 }

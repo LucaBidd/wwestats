@@ -19,7 +19,7 @@ import lombok.AllArgsConstructor;
 public class MatchService {
 
     private final MatchRepository repository;
-
+//---crud base---
     public List<Match> getAllMatches() {
         return repository.findAll();
     }
@@ -28,34 +28,29 @@ public class MatchService {
         return repository.findById(id);
     }
 
-    public void deleteById(String id){
-        // Verifica se esiste un match con quel nome
-        Optional<Match> w = repository.findById(id);
-        if (w.isPresent()) {
-            repository.deleteById(id);
-            System.out.println("Match " + id +" eliminato con successo");
-        } else {
-            System.out.println("Match " + id +" non trovato");
-        }
+    public void deleteById(String id) {
+        repository.deleteById(id);
+        System.out.println("Match " + id + " eliminato con successo");
     }
     
     public Match addMatch(Match match){
         return repository.save(match);
     }
     
-    public Match updateMatch(String id, Match m) {
-        return repository.findById(id).map(existingMatch -> {
-            existingMatch.setDurata(m.getDurata());
-            existingMatch.setTipo(m.getTipo());
-            existingMatch.setStipulazione(m.getStipulazione());
-            existingMatch.setPartecipanti(m.getPartecipanti());
-            existingMatch.setVincitori(m.getVincitori());
-
-            System.out.println("Match modificato correttamente");
-            return repository.save(existingMatch); // Usare un repository coerente
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match con ID " + id + " non trovato"));
+    public Match updateMatch(String id, Match match) {
+        return repository.findById(id)
+                .map(existingMatch -> {
+                    existingMatch.setDurata(match.getDurata());
+                    existingMatch.setTipo(match.getTipo());
+                    existingMatch.setStipulazione(match.getStipulazione());
+                    existingMatch.setPartecipanti(match.getPartecipanti());
+                    existingMatch.setVincitori(match.getVincitori());
+                    return repository.save(existingMatch);
+                })
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match con ID " + id + " non trovato"));
     }
-
+    
+//----altro---
     public List<Match> getByTipo(TipoMatch tipo){
         return repository.findByTipo(tipo);
     }
@@ -91,4 +86,16 @@ public class MatchService {
         return result; 
     }
 
+    public long countMatchesByWrestlerId(String id) {
+        return repository.findByPartecipantiContaining(id).size();
+    }
+    
+    public long countWinsByWrestlerId(String id) {
+        return repository.findByVincitoriContaining(id).size();
+    }
+    
+
+    public List<Match> getByEventId(String eventoId){
+        return repository.findByEventoId(eventoId);
+    }
 }

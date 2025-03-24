@@ -9,7 +9,10 @@ import com.luca.wwestatsspring.service.WrestlerService;
 
 import lombok.AllArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,9 +40,10 @@ public class WrestlerController {
     }
     
     @GetMapping("/{id}")
-    public Optional<Wrestler> getWrestler(@PathVariable String id) {        
+    public Wrestler getWrestler(@PathVariable String id) {        
         return wrestlerService.getWrestlerById(id);
     }
+
 
     @PostMapping
     public Wrestler addWrestler(@RequestBody Wrestler w) {
@@ -63,7 +67,7 @@ public class WrestlerController {
         return wrestlerService.getByNazionalita(nazionalita);
     }
 
-    @GetMapping("/filter/{min}/{max}")
+    @GetMapping("/filter/height/{min}/{max}")
     public List<Wrestler> filterByAltezzaBetween(@PathVariable int min,@PathVariable int max) {
         return wrestlerService.getByAltezzaBetween(min, max);
     }
@@ -73,115 +77,48 @@ public class WrestlerController {
         return wrestlerService.getTallest();
     }
 
+    @GetMapping("/filter/weight/{min}/{max}")
+    public List<Wrestler> filterByPesoBetween(@PathVariable int min,@PathVariable int max) {
+        return wrestlerService.getByPesoBetween(min, max);
+    }
+    
+    @GetMapping("/filter/heaviest")
+    public Optional<Wrestler> getHeaviest() {
+        return wrestlerService.getHeaviest();
+    }
+
+    @GetMapping("/filter/debut/{data}")
+    public List<Wrestler> getWrestlerByDebutto(@PathVariable LocalDate debutto) {
+        return wrestlerService.getWrestlerByDebutto(debutto);
+    }
+
+    @GetMapping("/filter/category/{categoria}")
+    public List<Wrestler> getWrestlerByCategoria(@PathVariable String categoria) {
+        return wrestlerService.getWrestlerByCategoria(categoria);
+    }
+
     @GetMapping("search/{nome}")
-    public List<Wrestler> getWrtestlerByNomeSimile(@PathVariable String nome) { 
-        return wrestlerService.getWrtestlerByNomeSimile(nome);
+    public List<Wrestler> getWrestlerByNomeSimile(@PathVariable String nome) { 
+        return wrestlerService.getWrestlerByNomeSimile(nome);
     }
     
-    @GetMapping("stats/{nome}")
-    public String getWrestlerStats(@PathVariable String nome) {
-        return matchService.getWrestlerStats(nome);
-    }
-    
-    
-}
-/*
- * 
- @GetMapping("/stats/{id}")
- public String getMethodName(@RequestParam String param) {
-     return new String();
- }
- */
-
-
-/* 
-
-
-    /*
-    @GetMapping("/{id}")
+    @GetMapping("/{id}/stats")
     public Map<String, Object> getWrestlerAndStats(@PathVariable String id) {
-        Wrestler wrestler = wrestlerRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Wrestler non trovato"));
+        Wrestler wrestler = wrestlerService.getWrestlerById(id);
+        long matchDisputati = matchService.countMatchesByWrestlerId(id);
+        long vittorie = matchService.countWinsByWrestlerId(id);
+        long sconfitte = matchDisputati - vittorie;
 
-        long matchDisputati = matchRepository.countMatchDisputati(id);
-        long vittorie = matchRepository.countVittorie(id);
-        
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("wrestler", wrestler);
         response.put("stats", Map.of(
             "matchDisputati", matchDisputati,
             "vittorie", vittorie,
-            "sconfitte", matchDisputati - vittorie
+            "sconfitte", sconfitte
         ));
-        
+
         return response;
     }
 
-
-
     
-
-    
-                
-                @GetMapping("/nazionalita/{nazionalita}")
-    public List<Wrestler> getWrestlersByNazionalita(@PathVariable String nazionalita) {
-        return wrestlerRepository.findByNazionalita(nazionalita);
-    }
-
-    @GetMapping("/altezza/{min}/{max}")
-    public List<Wrestler> getWrestlersByAltezzaRange(@PathVariable int min, @PathVariable int max) {
-        return wrestlerRepository.findByAltezzaBetween(min, max);
-    }
-
-    @GetMapping("/peso/{min}/{max}")
-    public List<Wrestler> getWrestlersByPesoRange(@PathVariable int min, @PathVariable int max) {
-        return wrestlerRepository.findByAltezzaBetween(min, max);
-    }
-
-    @GetMapping("/stats")
-public Map<String, Object> getWrestlerStats() {
-    long totalWrestlers = wrestlerRepository.count();
-    Optional<Wrestler> tallestWrestler = wrestlerRepository.findTopByOrderByAltezzaDesc();
-    Optional<Wrestler> heaviestWrestler = wrestlerRepository.findTopByOrderByAltezzaDesc();
-
-    Map<String, Object> stats = new HashMap<>();
-    stats.put("totalWrestlers", totalWrestlers);
-    stats.put("tallestWrestler", tallestWrestler.orElse(null));
-    stats.put("heaviestWrestler", heaviestWrestler.orElse(null));
-
-    return stats;
 }
-
-@GetMapping("/search/{nome}")
-public List<Wrestler> searchWrestlersByNome(@PathVariable String nome) {
-    return wrestlerRepository.findByNomeContainingIgnoreCase(nome);
-}
-
-@GetMapping("/paged")
-public ResponseEntity<Page<Wrestler>> getWrestlersPaged(
-        @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "10") int size,
-        @RequestParam(defaultValue = "nome") String sortBy) {
-    Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
-    Page<Wrestler> wrestlers = wrestlerRepository.findAll(pageable);
-    return ResponseEntity.ok(wrestlers);
-}
-@GetMapping("/{id}/matches")
-public List<Match> getMatchesByWrestlerId(@PathVariable String id) {
-    return matchRepository.findByWrestlerId(id);
-}
-
-@GetMapping("/{id}/stats/{year}")
-public Map<String, Object> getWrestlerStatsByYear(@PathVariable String id, @PathVariable int year) {
-    long totalMatches = matchRepository.countByWrestlerIdAndYear(id, year);
-    long wins = matchRepository.countByWrestlerIdAndYearAndResult(id, year, "win");
-    long losses = totalMatches - wins;
-    
-    Map<String, Object> stats = new HashMap<>();
-    stats.put("totalMatches", totalMatches);
-    stats.put("wins", wins);
-    stats.put("losses", losses);
-    
-    return stats;
-}
-*/

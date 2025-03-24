@@ -1,6 +1,5 @@
 package com.luca.wwestatsspring.controller;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +19,6 @@ import com.luca.wwestatsspring.service.MatchService;
 
 import lombok.AllArgsConstructor;
 
-
 @RestController
 @RequestMapping("api/matches")
 @AllArgsConstructor
@@ -28,7 +26,7 @@ public class MatchController {
 
     private final MatchService matchService;
 
-     /*** CRUD BASE ***/
+    /*** CRUD BASE ***/
     
     @GetMapping
     public List<Match> getAll() {
@@ -83,8 +81,7 @@ public class MatchController {
     }
 
     @GetMapping("/filter/longest")
-    public Optional<Match> filterLongtest() {
+    public Optional<Match> filterLongest() {
         return matchService.getLongest();
     }
-    
 }
