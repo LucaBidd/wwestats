@@ -174,7 +174,7 @@
     "data": "2025-01-28",
     "stato": "Stati Uniti",
     "citta": "San Antonio",
-    "matches": [
+    "matchesIds": [
       "67d2c46de680213ed7bff1a4",
       "67d2c4af7e2df45a14d03af1",
       "67d2c4bf7e2df45a14d03af2"
@@ -185,7 +185,7 @@
     "data": "2025-02-18",
     "stato": "Germania",
     "citta": "Berlino",
-    "matches": [
+    "matchesIds": [
       "67d2c4c77e2df45a14d03af3",
       "67d2c4cf7e2df45a14d03af4",
       "67d2c4d97e2df45a14d03af5"
@@ -196,7 +196,7 @@
     "data": "2025-04-07",
     "stato": "Stati Uniti",
     "citta": "New Orleans",
-    "matches": [
+    "matchesIds": [
       "67d2c4e17e2df45a14d03af6",
       "67d2c4ea7e2df45a14d03af7",
       "67d2c4f27e2df45a14d03af8"

@@ -92,6 +92,11 @@ public class EventoController {
         return eventoService.countByStato(stato);
     }
 
+    @GetMapping("/count/city/{citta}")
+    public long countByCitta(@PathVariable String citta) {
+        return eventoService.countByCitta(citta);
+    }
+
     //Dall'evento, stampa la lista dei match
     @GetMapping("/{id}/matches")
     public List<Match> getMatchesByEvento(@PathVariable String id) {
