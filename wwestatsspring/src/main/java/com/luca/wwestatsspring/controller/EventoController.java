@@ -19,7 +19,7 @@ import com.luca.wwestatsspring.service.EventoService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("api/matches")
+@RequestMapping("api/events")
 @AllArgsConstructor
 public class EventoController {
 
@@ -38,7 +38,7 @@ public class EventoController {
     }
 
     @PostMapping
-    public Evento addMatch(@RequestBody Evento e) {
+    public Evento addEvento(@RequestBody Evento e) {
         return eventoService.addEvento(e);
     }
     
@@ -56,27 +56,32 @@ public class EventoController {
 
 
     //Trova tutti gli eventi con quel nome
-    public List<Evento> findByNome(String nome){
+    @GetMapping("/filter/{nome}")
+    public List<Evento> findByNome(@PathVariable String nome){
         return eventoService.findByNome(nome);
     }
 
     //Trova in base al nome senza considerare maiusc/minusc
-    public List<Evento> findByNomeSimile(String nome){
+    @GetMapping("/search/{nome}")
+    public List<Evento> findByNomeSimile(@PathVariable String nome){
         return eventoService.findByNomeSimile(nome);
     }
 
     //Trova in base alla data
-    public List<Evento> filtraByData(LocalDate data){
+    @GetMapping("/filter/date/{data}")
+    public List<Evento> filtraByData(@PathVariable LocalDate data){
         return eventoService.findByData(data);
     }
 
     //Trova in base allo stato
-    public List<Evento> filtraByStato(String stato){
+    @GetMapping("/filter/country/{stato}")
+    public List<Evento> filtraByStato(@PathVariable String stato){
         return eventoService.findByStato(stato);
     }
 
     //Trova in base alla citta
-    public List<Evento> filtrByCitta(String citta){
+    @GetMapping("/filter/city/{citta}")
+    public List<Evento> filtraByCitta(@PathVariable String citta){
         return eventoService.findByCitta(citta);
     }
 }

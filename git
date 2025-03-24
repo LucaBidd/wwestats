@@ -1,0 +1,23 @@
+[33mcommit b14504cb660996d72204e7dc80b479861aa7dc71[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31mwwestats/develop[m[33m)[m
+Author: Luca Bidd <luca.biddeci@gmail.com>
+Date:   Mon Mar 17 17:55:20 2025 +0100
+
+    Aggiunto evento, con repository, service e controller, non ancora testato
+
+[33mcommit f069668badbcbcac41a1426a5fccc7035a2509cd[m[33m ([m[1;31mwwestats/master[m[33m, [m[1;31mwwestats/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Luca Bidd <luca.biddeci@gmail.com>
+Date:   Mon Mar 17 10:28:02 2025 +0100
+
+    aggiunta stipulazioni
+
+[33mcommit e6986588117cf42c80f0f2d639eed36caefb83d9[m
+Author: Luca Bidd <luca.biddeci@gmail.com>
+Date:   Mon Mar 17 10:03:45 2025 +0100
+
+    add initial files
+
+[33mcommit b93e54ebbb4c28288cbba237472f924b0d6ec079[m
+Author: Luca Bidd <luca.biddeci@gmail.com>
+Date:   Mon Mar 17 09:38:55 2025 +0100
+
+    initial commit
