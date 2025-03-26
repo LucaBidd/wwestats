@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.luca.wwestatsspring.model.Match;
 import com.luca.wwestatsspring.model.Stipulazione;
 import com.luca.wwestatsspring.model.TipoMatch;
+import com.luca.wwestatsspring.model.Wrestler;
 import com.luca.wwestatsspring.service.MatchService;
 
 import lombok.AllArgsConstructor;
@@ -84,4 +85,10 @@ public class MatchController {
     public Optional<Match> filterLongest() {
         return matchService.getLongest();
     }
+
+    @GetMapping("/{id}/wrestlers")
+    public List<Wrestler> getWrestlersByMatch(@PathVariable String id) {
+        return matchService.getWrestlersByMatch(id);
+    }
+
 }

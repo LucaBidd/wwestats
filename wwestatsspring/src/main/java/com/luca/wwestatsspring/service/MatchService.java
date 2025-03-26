@@ -1,7 +1,11 @@
 package com.luca.wwestatsspring.service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -10,7 +14,9 @@ import org.springframework.web.server.ResponseStatusException;
 import com.luca.wwestatsspring.model.Match;
 import com.luca.wwestatsspring.model.Stipulazione;
 import com.luca.wwestatsspring.model.TipoMatch;
+import com.luca.wwestatsspring.model.Wrestler;
 import com.luca.wwestatsspring.repository.MatchRepository;
+import com.luca.wwestatsspring.repository.WrestlerRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -19,6 +25,7 @@ import lombok.AllArgsConstructor;
 public class MatchService {
 
     private final MatchRepository repository;
+    private final WrestlerRepository wrestlerRepository;
 //---crud base---
     public List<Match> getAllMatches() {
         return repository.findAll();
@@ -98,4 +105,23 @@ public class MatchService {
     public List<Match> getByEventId(String eventoId){
         return repository.findByEventoId(eventoId);
     }
+
+    public List<Wrestler> getWrestlersByMatch(String matchId) {
+        Match match = repository.findById(matchId)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match non trovato"));
+    
+        System.out.println("Match trovato: " + match);
+    
+        // Unisci ID partecipanti e vincitori
+        Set<String> wrestlerIds = new HashSet<>();
+        wrestlerIds.addAll(match.getPartecipanti());
+        wrestlerIds.addAll(match.getVincitori());
+    
+        System.out.println("Wrestler IDs trovati nel match: " + wrestlerIds);
+    
+        // Recupera i wrestler dagli ID
+        return wrestlerRepository.findAllById(wrestlerIds);
+    }
+    
+
 }

@@ -25,6 +25,7 @@ public class EventoService {
 
     EventoRepository repository;
     MatchRepository matchRepository;
+    MatchService matchService;
     WrestlerRepository wrestlerRepository;
 //---crud base---
     public List<Evento> getAllEventi(){
@@ -109,26 +110,16 @@ public class EventoService {
     }
 
     public List<Wrestler> getWrestlersByEvento(String eventoId) {
-        // 1. Troviamo l'evento
         Evento evento = repository.findById(eventoId)
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Evento non trovato"));
-
-        // 2. Recuperiamo i match dell'evento
-        List<Match> matches = matchRepository.findAllById(evento.getMatchesIds());
-
-        // 3. Estraiamo i nomi unici di tutti i wrestler dai match (partecipanti + vincitori)
-        Set<String> wrestlerNomi = matches.stream()
-            .flatMap(m -> m.getPartecipanti().stream()) // Prendiamo tutti i partecipanti
-            .collect(Collectors.toSet()); // Rimuoviamo eventuali duplicati
-
-        // 4. Recuperiamo i wrestler dai nomi
-        List<Wrestler> wrestlers = wrestlerNomi.stream()
-            .map(nome -> wrestlerRepository.findWrestlerByNome(nome).orElse(null)) // Cerchiamo nel database
-            .filter(w -> w != null) // Rimuoviamo eventuali null (wrestler non trovati)
+    
+        // Otteniamo i wrestler per ogni match e li uniamo in un'unica lista
+        return evento.getMatchesIds().stream()
+            .flatMap(matchId -> matchService.getWrestlersByMatch(matchId).stream())
+            .distinct()
             .collect(Collectors.toList());
-
-        return wrestlers;
     }
+    
 
     // Trova eventi in un range di date
     public List<Evento> getByDataBetween(LocalDate startDate, LocalDate endDate){
